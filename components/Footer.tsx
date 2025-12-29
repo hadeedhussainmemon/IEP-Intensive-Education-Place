@@ -75,6 +75,7 @@ export default function Footer() {
                                 { name: "Digital Marketing", href: "/courses/digital-marketing" },
                                 { name: "Web Development", href: "/courses/web-development" },
                                 { name: "English Language", href: "/courses/english-language" },
+                                { name: "Ethical Hacking", href: "/courses/ethical-hacking" },
                             ].map((course) => (
                                 <li key={course.name}>
                                     <Link

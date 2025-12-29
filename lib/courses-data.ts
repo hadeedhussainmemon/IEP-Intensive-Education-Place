@@ -60,7 +60,8 @@ export const courses: Course[] = [
             "Microsoft Excel (Spreadsheets)",
             "Microsoft PowerPoint (Presentations)",
             "Inpage (Urdu Typesetting)"
-        ]
+        ],
+        image: "/images/cit.png"
     },
     {
         id: "3",
@@ -117,7 +118,8 @@ export const courses: Course[] = [
             "Functions & Arrays",
             "Problem Solving Techniques",
             "Building Simple Console Applications"
-        ]
+        ],
+        image: "/images/basic-programming.png"
     },
     {
         id: "6",
@@ -135,7 +137,8 @@ export const courses: Course[] = [
             "Information Gathering",
             "System Hacking Basics",
             "Web App Security Overview"
-        ]
+        ],
+        image: "/images/ethical-hacking.png"
     },
     {
         id: "7",
@@ -153,7 +156,8 @@ export const courses: Course[] = [
             "PowerPoint Animation & transitions",
             "Document Integration",
             "Office Shortcuts & Tips"
-        ]
+        ],
+        image: "/images/ms-office.png"
     },
     {
         id: "8",
