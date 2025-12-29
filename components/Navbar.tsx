@@ -68,17 +68,18 @@ export default function Navbar() {
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: "auto" }}
-                        exit={{ opacity: 0, height: 0 }}
-                        className="md:hidden glass border-b border-white/5 overflow-hidden"
+                        initial={{ opacity: 0, height: 0, y: -20 }}
+                        animate={{ opacity: 1, height: "auto", y: 0 }}
+                        exit={{ opacity: 0, height: 0, y: -20 }}
+                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                        className="md:hidden glass border-b border-white/5 overflow-hidden absolute top-24 left-0 right-0 shadow-2xl"
                     >
                         <div className="flex flex-col p-6 gap-4">
                             {navLinks.map((link) => (
                                 <Link
                                     key={link.name}
                                     href={link.href}
-                                    className="text-muted hover:text-white text-lg font-medium transition-colors"
+                                    className="text-muted hover:text-white text-lg font-medium transition-colors px-4 py-2 hover:bg-white/5 rounded-lg"
                                     onClick={() => setIsOpen(false)}
                                 >
                                     {link.name}
@@ -86,7 +87,7 @@ export default function Navbar() {
                             ))}
                             <Link
                                 href="/admissions"
-                                className="mt-2 w-full text-center py-3 rounded-xl bg-primary text-white font-bold"
+                                className="mt-2 w-full text-center py-4 rounded-xl bg-gradient-to-r from-primary to-secondary text-white font-bold shadow-lg active:scale-95 transition-transform"
                                 onClick={() => setIsOpen(false)}
                             >
                                 Enroll Now

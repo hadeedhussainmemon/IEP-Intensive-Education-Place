@@ -54,7 +54,7 @@ export default function Hero() {
                         </span>
                     </div>
 
-                    <h1 className="text-5xl md:text-7xl font-bold font-heading leading-tight mb-6">
+                    <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold font-heading leading-tight mb-6">
                         Empowering Students with <br />
                         <span className="text-gradient">Knowledge & Skills</span>
                     </h1>
@@ -63,16 +63,16 @@ export default function Hero() {
                         Unlock your potential with premium education in academic subjects and professional skills. Join IEP to learn, grow, and succeed in the digital age.
                     </p>
 
-                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
                         <Link
                             href="/courses"
-                            className="px-8 py-3 rounded-full bg-cta text-white font-semibold flex items-center gap-2 hover:scale-105 transition-all duration-300 shadow-lg shadow-primary/25 bg-gradient-to-r from-primary to-purple-600"
+                            className="w-full sm:w-auto px-8 py-4 sm:py-3 rounded-full bg-cta text-white font-semibold flex items-center justify-center gap-2 hover:scale-105 transition-all duration-300 shadow-lg shadow-primary/25 bg-gradient-to-r from-primary to-purple-600 active:scale-95"
                         >
                             Explore Courses <BookOpen size={20} />
                         </Link>
                         <Link
                             href="/admissions"
-                            className="px-8 py-3 rounded-full glass border border-white/10 font-semibold hover:bg-white/5 flex items-center gap-2 hover:scale-105 transition-all duration-300"
+                            className="w-full sm:w-auto px-8 py-4 sm:py-3 rounded-full glass border border-white/10 font-semibold hover:bg-white/5 flex items-center justify-center gap-2 hover:scale-105 transition-all duration-300 active:scale-95"
                         >
                             Enroll Now <ArrowRight size={20} />
                         </Link>

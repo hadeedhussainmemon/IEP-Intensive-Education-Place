@@ -1,5 +1,6 @@
 "use client";
 
+import { useRef } from "react";
 import { courses } from "@/lib/courses-data";
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -8,17 +9,52 @@ import SectionHeader from "./SectionHeader";
 import { ArrowRight } from "lucide-react";
 
 export default function CoursesGallery() {
+    const containerRef = useRef<HTMLDivElement>(null);
+
+    const scroll = (direction: "left" | "right") => {
+        if (containerRef.current) {
+            const scrollAmount = 350; // Card width + gap
+            containerRef.current.scrollBy({
+                left: direction === "left" ? -scrollAmount : scrollAmount,
+                behavior: "smooth",
+            });
+        }
+    };
+
     return (
         <section className="py-24 bg-background relative border-t border-white/5">
-            <div className="container px-6 mb-12">
+            <div className="container px-6 mb-12 flex items-end justify-between">
                 <SectionHeader
                     title="Our Courses"
                     subtitle="Swipe through our comprehensive range of professional and academic courses."
+                    className="mb-0"
                 />
+
+                {/* Navigation Buttons */}
+                <div className="hidden md:flex gap-4">
+                    <button
+                        onClick={() => scroll("left")}
+                        className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/10 active:scale-95 transition-all text-white"
+                        aria-label="Scroll left"
+                    >
+                        <ArrowRight size={20} className="rotate-180" />
+                    </button>
+                    <button
+                        onClick={() => scroll("right")}
+                        className="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center hover:bg-primary/80 active:scale-95 transition-all shadow-lg hover:shadow-primary/25"
+                        aria-label="Scroll right"
+                    >
+                        <ArrowRight size={20} />
+                    </button>
+                </div>
             </div>
 
             {/* Scroll Container */}
-            <div className="flex overflow-x-auto gap-6 px-6 pb-12 snap-x snap-mandatory scrollbar-thin scrollbar-track-transparent scrollbar-thumb-primary/20 hover:scrollbar-thumb-primary/50 transition-colors">
+            <div
+                ref={containerRef}
+                className="flex overflow-x-auto gap-6 px-6 pb-12 snap-x snap-mandatory scrollbar-none"
+                style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+            >
                 {courses.map((course, index) => (
                     <motion.div
                         key={course.id}
