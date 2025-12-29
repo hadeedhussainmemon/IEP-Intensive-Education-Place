@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-poppins);
+
+  --color-background: #0B0E14; /* Deep dark background */
+  --color-surface: #121826; /* Slightly lighter surface */
+  --color-primary: #8E24AA; /* Purple */
+  --color-secondary: #0D47A1; /* Blue */
+  --color-accent: #F28C28; /* Orange */
+  --color-muted: #9CA3AF; /* Gray text */
+  --color-white: #FFFFFF;
+  
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-glow: glow 2s ease-in-out infinite alternate;
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  @keyframes glow {
+    from { box-shadow: 0 0 5px #8E24AA, 0 0 10px #8E24AA; }
+    to { box-shadow: 0 0 10px #0D47A1, 0 0 20px #0D47A1; }
+  }
+}
+
+/* Custom Utilities */
+@utility glass {
+  @apply bg-surface/30 backdrop-blur-md border border-white/10 shadow-lg;
+}
+
+@utility text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple-500 to-secondary;
+}
+
+@utility card-hover {
+  @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/20;
+}
+
+/* Global Styles */
+body {
+  @apply bg-background text-white font-sans;
+  background: radial-gradient(circle at top center, #1a1f2e 0%, #0B0E14 100%);
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-heading font-bold;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-background;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-surface rounded-full border border-white/10;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary/50;
+}
