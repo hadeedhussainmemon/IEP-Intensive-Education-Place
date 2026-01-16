@@ -13,7 +13,7 @@ export default function Breadcrumbs() {
     const paths = pathname.split("/").filter(Boolean);
 
     return (
-        <div className="bg-surface/30 border-b border-white/5 backdrop-blur-sm">
+        <div className="bg-transparent">
             <div className="container px-6 py-3">
                 <div className="flex items-center gap-2 text-sm text-gray-400">
                     <Link
