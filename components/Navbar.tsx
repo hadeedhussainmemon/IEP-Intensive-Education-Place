@@ -6,6 +6,7 @@ import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
+import MagneticButton from "./MagneticButton";
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -57,12 +58,14 @@ export default function Navbar() {
                 </div>
 
                 <div className="hidden md:flex items-center">
-                    <Link
-                        href="/admissions"
-                        className="px-6 py-2.5 rounded-full bg-gradient-to-r from-primary to-secondary text-white text-sm font-bold shadow-lg shadow-primary/20 hover:shadow-primary/40 hover:scale-105 hover:-translate-y-0.5 transition-all duration-300 ring-1 ring-white/20"
-                    >
-                        Enroll Now
-                    </Link>
+                    <MagneticButton>
+                        <Link
+                            href="/admissions"
+                            className="px-6 py-2.5 rounded-full bg-gradient-to-r from-primary to-secondary text-white text-sm font-bold shadow-lg shadow-primary/20 hover:shadow-primary/40 hover:scale-105 hover:-translate-y-0.5 transition-all duration-300 ring-1 ring-white/20 inline-block"
+                        >
+                            Enroll Now
+                        </Link>
+                    </MagneticButton>
                 </div>
 
                 {/* Mobile Toggle */}

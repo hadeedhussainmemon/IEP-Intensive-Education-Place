@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import MagneticButton from "./MagneticButton";
 
 export default function CTA() {
     return (
@@ -39,12 +40,14 @@ export default function CTA() {
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 }}
                     >
-                        <Link
-                            href="/admissions"
-                            className="inline-flex items-center gap-2 px-10 py-4 rounded-full bg-gradient-to-r from-primary to-secondary text-white font-bold text-lg shadow-xl hover:shadow-primary/30 hover:scale-105 transition-all duration-300"
-                        >
-                            Enroll Now <ArrowRight size={20} />
-                        </Link>
+                        <MagneticButton>
+                            <Link
+                                href="/admissions"
+                                className="inline-flex items-center gap-2 px-10 py-4 rounded-full bg-gradient-to-r from-primary to-secondary text-white font-bold text-lg shadow-xl hover:shadow-primary/30 hover:scale-105 transition-all duration-300"
+                            >
+                                Enroll Now <ArrowRight size={20} />
+                            </Link>
+                        </MagneticButton>
                     </motion.div>
                 </div>
             </div>

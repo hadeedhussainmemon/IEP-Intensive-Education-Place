@@ -2,6 +2,8 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, BookOpen } from "lucide-react";
 import Image from "next/image";
+import TypewriterText from "./TypewriterText";
+import MagneticButton from "./MagneticButton";
 
 export default function Hero() {
     return (
@@ -54,9 +56,9 @@ export default function Hero() {
                         </span>
                     </div>
 
-                    <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold font-heading leading-tight mb-6">
+                    <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold font-heading leading-tight mb-6 h-[3em] sm:h-[auto]">
                         Empowering Students with <br />
-                        <span className="text-gradient">Knowledge & Skills</span>
+                        <TypewriterText words={["Knowledge & Skills", "Future Success", "Professional Growth"]} />
                     </h1>
 
                     <p className="text-lg md:text-xl text-muted max-w-2xl mx-auto mb-10 leading-relaxed">
@@ -64,18 +66,22 @@ export default function Hero() {
                     </p>
 
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
-                        <Link
-                            href="/courses"
-                            className="w-full sm:w-auto px-8 py-4 sm:py-3 rounded-full bg-cta text-white font-semibold flex items-center justify-center gap-2 hover:scale-105 transition-all duration-300 shadow-lg shadow-primary/25 bg-gradient-to-r from-primary to-purple-600 active:scale-95"
-                        >
-                            Explore Courses <BookOpen size={20} />
-                        </Link>
-                        <Link
-                            href="/admissions"
-                            className="w-full sm:w-auto px-8 py-4 sm:py-3 rounded-full glass border border-white/10 font-semibold hover:bg-white/5 flex items-center justify-center gap-2 hover:scale-105 transition-all duration-300 active:scale-95"
-                        >
-                            Enroll Now <ArrowRight size={20} />
-                        </Link>
+                        <MagneticButton>
+                            <Link
+                                href="/courses"
+                                className="w-full sm:w-auto px-8 py-4 sm:py-3 rounded-full bg-cta text-white font-semibold flex items-center justify-center gap-2 hover:scale-105 transition-all duration-300 shadow-lg shadow-primary/25 bg-gradient-to-r from-primary to-purple-600 active:scale-95"
+                            >
+                                Explore Courses <BookOpen size={20} />
+                            </Link>
+                        </MagneticButton>
+                        <MagneticButton>
+                            <Link
+                                href="/admissions"
+                                className="w-full sm:w-auto px-8 py-4 sm:py-3 rounded-full glass border border-white/10 font-semibold hover:bg-white/5 flex items-center justify-center gap-2 hover:scale-105 transition-all duration-300 active:scale-95"
+                            >
+                                Enroll Now <ArrowRight size={20} />
+                            </Link>
+                        </MagneticButton>
                     </div>
                 </motion.div>
             </div>
