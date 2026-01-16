@@ -31,6 +31,32 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${poppins.variable} antialiased font-sans bg-background text-foreground selection:bg-primary selection:text-white`}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "EducationalOrganization",
+              "name": "IEP – Intensive Education Place",
+              "url": "https://iep.edu.pk",
+              "logo": "https://iep.edu.pk/logo.png",
+              "founder": {
+                "@type": "Person",
+                "name": "Sir Zafar"
+              },
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Shah Faisal, Near Cadio, Colony no 3",
+                "addressLocality": "Karachi",
+                "addressCountry": "PK"
+              },
+              "sameAs": [
+                "https://instagram.com/intensive_education_place",
+                "https://facebook.com/intensiveeducationplace"
+              ]
+            })
+          }}
+        />
         {children}
       </body>
     </html>
