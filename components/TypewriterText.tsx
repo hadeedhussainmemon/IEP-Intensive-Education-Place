@@ -25,9 +25,9 @@ export default function TypewriterText({ words }: { words: string[] }) {
     }, [index, words, count]);
 
     return (
-        <span className="text-gradient inline-flex">
+        <span className="text-gradient inline-flex items-center">
             <motion.span>{displayText}</motion.span>
-            <span className="w-1 h-10 bg-primary ml-1 animate-pulse" />
+            <span className="w-[3px] h-[0.9em] bg-primary ml-1 animate-pulse rounded-full" />
         </span>
     );
 }
