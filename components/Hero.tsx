@@ -50,7 +50,7 @@ export default function Hero() {
                             <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
                         </span>
                         <span className="text-sm font-medium text-gray-300">
-                            Admissions Open for 2025
+                            Admissions Open for {new Date().getFullYear()}
                         </span>
                     </div>
 

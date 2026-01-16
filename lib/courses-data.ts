@@ -127,7 +127,7 @@ export const courses: Course[] = [
         slug: "ethical-hacking",
         description: "Understand cybersecurity fundamentals, network safety, and how to protect digital assets.",
         icon: Shield,
-        duration: "2 Months",
+        duration: "6 Months",
         level: "Intermediate",
         fullDescription: "Enter the world of Cybersecurity. This course introduces you to the concepts of ethical hacking, network security, and vulnerability assessment. Learn how to protect systems by understanding how they can be compromised.",
         modules: [

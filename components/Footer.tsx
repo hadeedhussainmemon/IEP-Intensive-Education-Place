@@ -105,7 +105,7 @@ export default function Footer() {
                                     <MapPin size={20} />
                                 </div>
                                 <span className="group-hover:text-white transition-colors">
-                                    C-25, Block 13-D, Gulshan-e-Iqbal, Karachi
+                                    Shah Faisal, Near Cadio,Colony no 3
                                 </span>
                             </li>
                             <li className="flex items-center gap-4 text-muted group">
