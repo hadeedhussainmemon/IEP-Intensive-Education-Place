@@ -5,9 +5,11 @@ import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
+    const pathname = usePathname();
 
     const navLinks = [
         { name: "Home", href: "/" },
@@ -37,16 +39,21 @@ export default function Navbar() {
 
                 {/* Desktop Menu */}
                 <div className="hidden md:flex items-center gap-8 bg-surface/30 px-8 py-3 rounded-full border border-white/5 backdrop-blur-md shadow-xl">
-                    {navLinks.map((link) => (
-                        <Link
-                            key={link.name}
-                            href={link.href}
-                            className="text-sm font-medium text-gray-300 hover:text-white transition-colors duration-300 relative group py-1"
-                        >
-                            {link.name}
-                            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-secondary transition-all duration-300 group-hover:w-full" />
-                        </Link>
-                    ))}
+                    {navLinks.map((link) => {
+                        const isActive = pathname === link.href;
+                        return (
+                            <Link
+                                key={link.name}
+                                href={link.href}
+                                className={`text-sm font-medium transition-colors duration-300 relative group py-1 ${isActive ? "text-white" : "text-gray-300 hover:text-white"
+                                    }`}
+                            >
+                                {link.name}
+                                <span className={`absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-primary to-secondary transition-all duration-300 ${isActive ? "w-full" : "w-0 group-hover:w-full"
+                                    }`} />
+                            </Link>
+                        );
+                    })}
                 </div>
 
                 <div className="hidden md:flex items-center">

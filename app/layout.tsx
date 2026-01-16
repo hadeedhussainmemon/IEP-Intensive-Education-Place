@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
+import ScrollProgress from "@/components/ScrollProgress";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -31,6 +33,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${poppins.variable} antialiased font-sans bg-background text-foreground selection:bg-primary selection:text-white`}
       >
+        <ScrollProgress />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -57,6 +60,9 @@ export default function RootLayout({
             })
           }}
         />
+        <div className="fixed top-24 left-0 right-0 z-40">
+          <Breadcrumbs />
+        </div>
         {children}
       </body>
     </html>
