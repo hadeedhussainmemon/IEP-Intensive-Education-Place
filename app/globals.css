@@ -76,27 +76,32 @@ h6 {
 /* Scrollbar */
 html {
   scrollbar-width: thin;
-  scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
+  scrollbar-color: #121826 #0B0E14;
+  /* Surface Thumb, Background Track */
 }
 
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 8px;
+  /* Slightly wider for better usability if visible */
+  height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: transparent;
+  background: #0B0E14;
+  /* Deep dark background */
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.1);
+  background: #2D3748;
+  /* Dark Grey Blue - Subtle */
   border-radius: 9999px;
-  backdrop-filter: blur(4px);
+  border: 2px solid #0B0E14;
+  /* Creates padding effect */
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(142, 36, 170, 0.8);
-  /* Primary color */
+  background: #4A5568;
+  /* Lighter Grey Blue on Hover */
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
